@@ -179,7 +179,8 @@ inline bool __is_host_memory_pool_supported()
 #  if _CCCL_CTK_AT_LEAST(13, 0)
   return ::cuda::device_attributes::host_memory_pools_supported(cuda::device_ref{0});
 #  elif _CCCL_CTK_AT_LEAST(12, 6)
-  return ::cuda::device_attributes::host_numa_memory_pools_supported(cuda::device_ref{0});
+  // host_numa_memory_pools_supported 仅在 attributes.h 中 CTK 13+ 时定义（因部分 12.x 头文件无该枚举）
+  return false;
 #  else
   return false;
 #  endif
