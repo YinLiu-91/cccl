@@ -37,6 +37,7 @@ NVBENCH_DECLARE_TYPE_STRINGS(uint128_t, "U128", "uint128_t");
 #endif
 
 using complex = cuda::std::complex<float>;
+using complex_double = cuda::std::complex<double>;
 
 #if _CCCL_HAS_NVFP16()
 NVBENCH_DECLARE_TYPE_STRINGS(__half, "F16", "half");

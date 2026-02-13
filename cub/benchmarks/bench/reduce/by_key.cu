@@ -176,6 +176,7 @@ using key_types =
 using value_types = nvbench::type_list<TUNE_ValueT>;
 #else // !defined(TUNE_ValueT)
 using value_types = all_types;
+// using value_types = nvbench::type_list< complex_double>;
 #endif // TUNE_ValueT
 
 NVBENCH_BENCH_TYPES(reduce, NVBENCH_TYPE_AXES(key_types, value_types, some_offset_types))
